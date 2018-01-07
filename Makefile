@@ -19,16 +19,23 @@ CHEATS:=0
 DUMP:=0
 
 
-.PHONY: all clean
+.PHONY: all clean fclean re
 all: libtf2mod.so
 clean:
-	rm -f libtf2mod.so $(shell find . -iname '*.o')
+	rm -f libtf2mod.so
+
+fclean: clean
+	rm -rf $(shell find . -iname '*.o')
+
+re: fclean all
 
 libtf2mod.so: $(OBJECTS) Makefile
 	gcc $(CFLAGS) -o $@ $(OBJECTS) $(LDFLAGS)
 
 %.o: %.c $(HDR_C) Makefile
-	gcc $(CFLAGS) -DCHEATS=$(CHEATS) -DDUMP=$(DUMP) -o $@ -c $<
+	@printf '$@                                              \r'
+	@gcc $(CFLAGS) -DCHEATS=$(CHEATS) -DDUMP=$(DUMP) -o $@ -c $<
 
 %.o: %.s $(HDR_ASM) Makefile
-	nasm $(NASMFLAGS) -o $@ $<
+	@printf '$@                                              \r'
+	@nasm $(NASMFLAGS) -o $@ $<
