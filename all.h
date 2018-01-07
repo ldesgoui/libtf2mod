@@ -38,7 +38,7 @@
 
 /* libiberty */
 #define HAVE_DECL_BASENAME 1
-#include <demangle.h>
+#include <libiberty/demangle.h>
 
 /* libelf */
 #include <libelf.h>
