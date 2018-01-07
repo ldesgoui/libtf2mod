@@ -1,115 +1,11 @@
 #include "all.h"
 
 
+extern detour_info_t detour_get_tick_interval;
+
+
 detour_info_t *detours[] = {
-	&detour_shared_CTFSniperRifle_ExplosiveHeadShot,
-	&detour_shared_CBasePlayer_IsBot,
-	&detour_shared_CTFPlayer_SpeakConceptIfAllowed,
-	
-	&detour_sentry_moveturret_decimate,
-	//&detour_minisentry_quickbuild_health_fix,
-	&detour_pushallplayersaway_disable,
-	&detour_robot_tickle_enable,
-	&detour_disposable_sentry_enable_health_upgrades,
-	//&detour_wavestatus_teleporter_rtr_fix,
-	//&detour_engiebot_ai_unsap,
-	&detour_robot_headslide_disable,
-	&detour_redcredits_doublecollect_fix,
-	//&detour_spawnprotect_cond51_only,
-	&detour_robot_gib_improvements,
-	&detour_robot_gib_dissolve_fix,
-	&detour_yer_nerf_disable,
-	&detour_arrow_pen_ignoreuber,
-	&detour_eh_medieval_disable,
-	&detour_bot_multiclass_item_fix,
-	&detour_mvm_chat_unrestrict,
-	&detour_tank_destroy_blu_buildings,
-//	&detour_wave_reset_countdown_fix,
-	&detour_sentrybuster_roundwin_behavior_fix,
-	&detour_eh_recursive_fix,
-	//&detour_nextprimaryattack_unalias,
-	&detour_stun_weapon_unhide_fix,
-	&detour_sapper_allow_multiple_active,
-	//&detour_bot_enemy_selection_tweak,
-	&detour_eh_sydney_check_uber,
-	&detour_loadout_allow_holiday_items,
-	&detour_bot_stun_disallow_headmove,
-	&detour_tank_widowmaker_metal,
-	&detour_responses_unused_sapper,
-	&detour_responses_unused_credits,
-	&detour_responses_suppress_medicbot_shield,
-	&detour_responses_suppress_giant_sentrybuster,
-	//&detour_countdown_10second_sound_fix,
-	//&detour_engiebot_nonsolid_buildings,
-	&detour_engiebot_check_build_placement,
-	&detour_event_popfile_perennial,
-	
-	//&detour_mini_dispenser,
-	
-	/*&detour_disposable_dispenser_part1,
-	&detour_disposable_dispenser_part2,
-	&detour_disposable_dispenser_part3,
-	&detour_disposable_dispenser_part4,
-	&detour_disposable_dispenser_part5,*/
-	
-	//&detour_mvm_extended_waveloss_time,
-	//&detour_tank_minigun_resistance_disable,
-	//&detour_sapper_cooldown_disable,
-	//&detour_sapper_extended_duration,
-	//&detour_sniperdot_nodestroy,
-	
-	&detour_medicbot_ai_xbow_heal,
-	
-//	&detour_perf_attr_nomunge,
-	
-	//&detour_diagnostics,
-//	&detour_debug_wavecounts,
-	//&detour_debug_rescueranger_pickup_range,
-	//&detour_debug_gib_glitch,
-	//&detour_debug_headshot_bug,
-	//&detour_debug_spawn_without_weapons,
-	//&detour_debug_readyup_missing_sounds,
-	//&detour_debug_usermessage,
-	//&detour_debug_revive,
-	//&detour_debug_stats,
-	&detour_debug_upgrades,
-	//&detour_debug_damageinfo,
-	//&detour_debug_changelevel,
-	//&detour_debug_airblast,
-	//&detour_debug_aimhead,
-	//&detour_debug_gametype,
-	//&detour_debug_rescueranger_trace,
-	&detour_debug_addcond_removecond,
-	&detour_debug_nextbot_input,
-	&detour_debug_sentry_dmg_kills,
-	//&detour_debug_spectator_bomb_carrier,
-	&detour_debug_wavestatus_tele_count,
-	//&detour_debug_onkilled,
-	&detour_debug_player_attributes,
-	&detour_debug_multidamage,
-	
-	&detour_debug_spawn_item_fail_trace,
-	
-	//&detour_profile_attributes,
-	
-	//&detour_reimplement_sv_showhitboxes,
-	//&detour_reimplement_cond_reprogrammed,
-	
-#if CHEATS
-	&detour_sapper_apply_reprogrammed,
-	&detour_mvm_enable_dropped_weapons,
-#endif
-	
-	//&detour_demoshield_tank_killeater_cheat,
-	//&detour_override_locomotion_runspeed,
-	//&detour_unused_attribute_classes,
-	
-	//&detour_canteen_override,
-	//&detour_allow_class_change_during_wave,
-	//&detour_tank_use_vcollide,
-	
-	&detour_force_spec_kill_bots,
-	//&detour_disallow_deploy_when_ubered,
+	&detour_get_tick_interval,
 };
 
 

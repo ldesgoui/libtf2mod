@@ -2,37 +2,6 @@
 
 
 patch_info_t *patches[] = {
-	&patch_human_deathyell_enable,
-	&patch_sniperrifle_chargerate_uncap_stock,
-	&patch_sniperrifle_chargerate_uncap_classic,
-	&patch_sentrygun_think_every_tick,
-	&patch_redcredits_unrestrict_weaponid,
-	&patch_redcredits_unrestrict_class,
-	&patch_disposable_sentry_enable_health_upgrades,
-//	&patch_giant_stomp_disable,
-	&patch_deploybomb_suppress_output,
-	&patch_engiebot_ai_repair_tele_under_construction,
-	&patch_bot_medieval_nonmelee_allow,
-	&patch_eyelander_overheal_decay_fix,
-	//&patch_currencypack_no_pull,
-	
-	//&patch_tank_shake_disable,
-	//&patch_bot_revivemarker_enable,
-	&patch_medicbot_ai_xbow_heal_part1,
-	&patch_medicbot_ai_xbow_heal_part2,
-	
-//	&patch_perf_attr_premunge_mvm,
-//	&patch_perf_attr_premunge_halloween,
-	
-//	&patch_currencypack_torture,
-	
-#if CHEATS
-	&patch_eh_unrestrict_weaponid,
-	&patch_bazaarbargain_head_uncap,
-	&patch_mvm_enable_dropped_weapons,
-#endif
-	
-	&patch_mvm_enable_human_gibbing,
 };
 
 

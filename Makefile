@@ -22,10 +22,10 @@ DUMP:=0
 .PHONY: all clean fclean re
 all: libtf2mod.so
 clean:
-	rm -f libtf2mod.so
+	rm -rf $(shell find . -iname '*.o')
 
 fclean: clean
-	rm -rf $(shell find . -iname '*.o')
+	rm -f libtf2mod.so
 
 re: fclean all
 

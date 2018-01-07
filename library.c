@@ -6,7 +6,6 @@ static const char *libs_wanted[] = {
 	"server_srv.so",
 	"libtier0_srv.so",
 	"soundemittersystem_srv.so",
-	
 	"filesystem_stdio.so",
 	"dedicated_srv.so",
 	"replay_srv.so",

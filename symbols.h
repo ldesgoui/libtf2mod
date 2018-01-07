@@ -188,6 +188,7 @@ extern void (*CAttributeManager_RegisterGlobalAttributeModifier)(bool (*)(void),
 
 extern bool (*CServerGameDLL_DLLInit)(CServerGameDLL* this, void* (*)(char const*, int*), void* (*)(char const*, int*), void* (*)(char const*, int*), CGlobalVars*);
 extern void (*CServerGameDLL_PreClientUpdate)(CServerGameDLL* this, bool);
+extern float (*CServerGameDLL_GetTickInterval)(CServerGameDLL* this);
 
 extern edict_t* (*CVEngineServer_PEntityOfEntIndex)(CVEngineServer* this, int);
 

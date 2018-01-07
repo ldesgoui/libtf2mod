@@ -71,13 +71,6 @@ DEFINE_ENTPROP(int, CTFGameRules, m_nGameType);
 DEFINE_ENTPROP(bool, CCurrencyPack, m_bDistributed);
 
 
-/* extracted entprops */
-
-DEFINE_EXTRACTED(CTFPlayer*, CTFPlayerShared, m_pOuter);
-DEFINE_EXTRACTED(int, CTFBot, m_nMission);
-DEFINE_EXTRACTED(EHANDLE, CTFBot, m_hSBTarget);
-
-
 void entprop_init(void)
 {
 	INIT_SENDPROP(CBaseEntity_m_Collision,
@@ -138,10 +131,6 @@ void entprop_init(void)
 		CCurrencyPack, m_bDistributed);
 	
 	
-	INIT_EXTRACTED(CTFPlayerShared_m_pOuter);
-	
-	INIT_EXTRACTED(CTFBot_m_nMission);
-	INIT_EXTRACTED(CTFBot_m_hSBTarget);
 }
 
 

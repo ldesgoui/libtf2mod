@@ -1,10 +1,10 @@
 #include "all.h"
 
 
-static ConCommand cmd_listmods;
+static ConCommand cmd;
 
 
-static void callback_listmods(CCommand const* args)
+static void callback_command(CCommand const* args)
 {
 	// TODO
 }
@@ -12,6 +12,6 @@ static void callback_listmods(CCommand const* args)
 
 void convar_init(void)
 {
-	ConCommand_ctor(&cmd_listmods, "sigsegv_listmods", &callback_listmods,
+	ConCommand_ctor(&cmd, "ptf", &callback_command,
 		NULL, 0, NULL);
 }

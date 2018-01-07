@@ -297,7 +297,7 @@ void symbols_init(void)
 		"_ZN16CTFDroppedWeapon6CreateEP9CTFPlayerRK6VectorRK6QAnglePKcPK13CEconItemView");
 	
 	SYMBOL_FUNC(CAttributeManager_AttribHookValue_CAttribute_String,
-		"_ZN17CAttributeManager15AttribHookValueI17CAttribute_StringEET_S2_PKcPK11CBaseEntityP10CUtlVectorIPS5_10CUtlMemoryIS9_iEEb");
+		"_ZZN17CAttributeManager15AttribHookValueI17CAttribute_StringEET_S2_PKcPK11CBaseEntityP10CUtlVectorIPS5_10CUtlMemoryIS9_iEEbE6tm_fmt");
 	SYMBOL_FUNC(CAttributeManager_AttribHookValue_float,
 		"_ZN17CAttributeManager15AttribHookValueIfEET_S1_PKcPK11CBaseEntityP10CUtlVectorIPS4_10CUtlMemoryIS8_iEEb");
 	SYMBOL_FUNC(CAttributeManager_AttribHookValue_int,
@@ -312,6 +312,8 @@ void symbols_init(void)
 		"_ZN14CServerGameDLL7DLLInitEPFPvPKcPiES5_S5_P11CGlobalVars");
 	SYMBOL_FUNC(CServerGameDLL_PreClientUpdate,
 		"_ZN14CServerGameDLL15PreClientUpdateEb");
+	SYMBOL_FUNC(CServerGameDLL_GetTickInterval,
+		"_ZNK14CServerGameDLL15GetTickIntervalEv");
 	
 	SYMBOL_FUNC(CVEngineServer_PEntityOfEntIndex,
 		"_ZN14CVEngineServer17PEntityOfEntIndexEi");
@@ -972,15 +974,4 @@ void symbols_init(void)
 	
 	SYMBOL_FUNC(CCollisionProperty_SetSolid,
 		"_ZN18CCollisionProperty8SetSolidE11SolidType_t");
-	
-	
-#warning TODO: symbols for these upgrade related functions
-	// CTFPlayer::*
-	// CMannVsMachineStats::*
-	// CPopulationManager::*
-	// CEconEntity::*
-	// CTFPowerupBottle::*
-	// CTFWeaponBase::*
-	// CTFWearable::*
-	// CTFGameRules::*
 }

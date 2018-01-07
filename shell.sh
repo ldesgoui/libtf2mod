@@ -5,4 +5,3 @@
 #!nix-shell -p pkgsi686Linux.libiberty
 #!nix-shell -p pkgsi686Linux.nasm
 #!nix-shell -p gnumake
-exec bash

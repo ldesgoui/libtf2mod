@@ -40,12 +40,6 @@ bool *prop_CCurrencyPack_m_bDistributed(CCurrencyPack* ent);
 
 /* extracted entprops */
 
-CTFPlayer* *prop_CTFPlayerShared_m_pOuter(CTFPlayerShared* ent);
-
-int *prop_CTFBot_m_nMission(CTFBot* ent);
-EHANDLE *prop_CTFBot_m_hSBTarget(CTFBot* ent);
-
-
 void entprop_init(void);
 
 
