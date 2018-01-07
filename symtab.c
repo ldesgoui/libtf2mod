@@ -3,6 +3,7 @@
 
 void symtab_init(library_info_t *lib)
 {
+	elf_version(EV_CURRENT);
 	lib->elf_hdr = lib->map;
 	lib->elf = elf_memory(lib->map, lib->size);
 	
