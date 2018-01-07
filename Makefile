@@ -1,4 +1,5 @@
-CFLAGS :=-m32 -I. -I/usr/include/libiberty -shared -fPIC -rdynamic -std=gnu11 -fno-omit-frame-pointer -O2 -g -Wall -fdiagnostics-color=always -Wno-unused-variable -Wno-unused-function -march=native -mtune=native -pthread -maccumulate-outgoing-args -masm=intel
+
+CFLAGS :=-m32 -I. -I/nix/store/2wd1l7qwj46g6vv2drcrs3xr5rd46bgi-libiberty-6.4.0-dev/include/libiberty -shared -fPIC -rdynamic -std=gnu11 -fno-omit-frame-pointer -O2 -g -Wall -fdiagnostics-color=always -Wno-unused-variable -Wno-unused-function -march=native -mtune=native -pthread -maccumulate-outgoing-args -masm=intel
 LDFLAGS:=-Wl,-z,defs -Wl,--no-undefined -lstdc++ -lm -ldl -lbsd -lelf -Wl,-E libiberty.a
 NASMFLAGS:=-f elf32 -g -F dwarf -i. -Ox
 
