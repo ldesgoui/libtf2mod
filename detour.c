@@ -1,11 +1,13 @@
 #include "all.h"
 
 
-extern detour_info_t detour_get_tick_interval;
+extern detour_info_t detour_unlocked_tickrate;
+extern detour_info_t detour_sticky_delay_fix;
 
 
 detour_info_t *detours[] = {
-	&detour_get_tick_interval,
+	&detour_unlocked_tickrate,
+	&detour_sticky_delay_fix,
 };
 
 

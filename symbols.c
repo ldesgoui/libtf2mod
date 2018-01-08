@@ -253,11 +253,6 @@ void symbols_init(void)
 	SYMBOL_FUNC(FX_FireBullets,
 		"_Z14FX_FireBulletsP13CTFWeaponBaseiRK6VectorRK6QAngleiiiffb");
 	
-	SYMBOL_FUNC(GlobalAttrModifier_MvMAttribHookMunger,
-		"_ZL38GlobalAttrModifier_MvMAttribHookMungerPKcP19CUtlConstStringBaseIcE");
-	SYMBOL_FUNC(GlobalAttrModifier_TFHalloweenAttribHookMunger,
-		"_ZL46GlobalAttrModifier_TFHalloweenAttribHookMungerPKcP19CUtlConstStringBaseIcE");
-	
 	SYMBOL_FUNC(GetEquippedDemoShield,
 		"_Z21GetEquippedDemoShieldP9CTFPlayer");
 	
@@ -296,14 +291,10 @@ void symbols_init(void)
 	SYMBOL_FUNC(CTFDroppedWeapon_Create,
 		"_ZN16CTFDroppedWeapon6CreateEP9CTFPlayerRK6VectorRK6QAnglePKcPK13CEconItemView");
 	
-	SYMBOL_FUNC(CAttributeManager_AttribHookValue_CAttribute_String,
-		"_ZZN17CAttributeManager15AttribHookValueI17CAttribute_StringEET_S2_PKcPK11CBaseEntityP10CUtlVectorIPS5_10CUtlMemoryIS9_iEEbE6tm_fmt");
 	SYMBOL_FUNC(CAttributeManager_AttribHookValue_float,
 		"_ZN17CAttributeManager15AttribHookValueIfEET_S1_PKcPK11CBaseEntityP10CUtlVectorIPS4_10CUtlMemoryIS8_iEEb");
 	SYMBOL_FUNC(CAttributeManager_AttribHookValue_int,
 		"_ZN17CAttributeManager15AttribHookValueIiEET_S1_PKcPK11CBaseEntityP10CUtlVectorIPS4_10CUtlMemoryIS8_iEEb");
-	SYMBOL_FUNC(CAttributeManager_RegisterGlobalAttributeModifier,
-		"_ZN17CAttributeManager31RegisterGlobalAttributeModifierEPFbvEPFvPKcP19CUtlConstStringBaseIcEE");
 	
 	
 	/* functions: member */
@@ -346,14 +337,10 @@ void symbols_init(void)
 		"_ZNK11CBaseEntity13GetTeamNumberEv");
 	SYMBOL_FUNC(CBaseEntity_IsAlive,
 		"_ZN11CBaseEntity7IsAliveEv");
-	SYMBOL_FUNC(CBaseEntity_InSameTeam,
-		"_ZNK11CBaseEntity10InSameTeamEPS_");
 	SYMBOL_FUNC(CBaseEntity_IsBaseObject,
 		"_ZNK11CBaseEntity12IsBaseObjectEv");
 	SYMBOL_FUNC(CBaseEntity_IsPlayer,
 		"_ZNK11CBaseEntity8IsPlayerEv");
-	SYMBOL_FUNC(CBaseEntity_NetworkStateChanged,
-		"_ZN11CBaseEntity19NetworkStateChangedEPv");
 	SYMBOL_FUNC(CBaseEntity_TakeDamage,
 		"_ZN11CBaseEntity10TakeDamageERK15CTakeDamageInfo");
 	
@@ -364,8 +351,6 @@ void symbols_init(void)
 	
 	SYMBOL_FUNC(CBasePlayer_ChangeTeam,
 		"_ZN11CBasePlayer10ChangeTeamEi");
-	SYMBOL_FUNC(CBasePlayer_ChangeTeam_bool,
-		"_ZN11CBasePlayer10ChangeTeamEibb");
 	SYMBOL_FUNC(CBasePlayer_CommitSuicide,
 		"_ZN11CBasePlayer13CommitSuicideEbb");
 	SYMBOL_FUNC(CBasePlayer_GiveNamedItem,
@@ -380,8 +365,6 @@ void symbols_init(void)
 		"_ZN9CTFPlayer17AddBuildResourcesEi");
 	SYMBOL_FUNC(CTFPlayer_ApplyAbsVelocityImpulse,
 		"_ZN9CTFPlayer23ApplyAbsVelocityImpulseERK6Vector");
-	SYMBOL_FUNC(CTFPlayer_ApplyAirBlastImpulse,
-		"_ZN9CTFPlayer20ApplyAirBlastImpulseERK6Vector");
 	SYMBOL_FUNC(CTFPlayer_CanBeForcedToLaugh,
 		"_ZN9CTFPlayer18CanBeForcedToLaughEv");
 	SYMBOL_FUNC(CTFPlayer_CanBuild,
@@ -392,14 +375,14 @@ void symbols_init(void)
 		"_ZN9CTFPlayer17CanPickupBuildingEP11CBaseObject");
 	SYMBOL_FUNC(CTFPlayer_ChangeTeam,
 		"_ZN9CTFPlayer10ChangeTeamEi");
-	SYMBOL_FUNC(CTFPlayer_ChangeTeam_bool,
-		"_ZN9CTFPlayer10ChangeTeamEibb");
 	SYMBOL_FUNC(CTFPlayer_CommitSuicide,
 		"_ZN9CTFPlayer13CommitSuicideEbb");
 	SYMBOL_FUNC(CTFPlayer_CreateRagdollEntity,
 		"_ZN9CTFPlayer19CreateRagdollEntityEbbbbbbbbib");
 	SYMBOL_FUNC(CTFPlayer_DeathSound,
 		"_ZN9CTFPlayer10DeathSoundERK15CTakeDamageInfo");
+	SYMBOL_FUNC(CTFPlayer_DoClassSpecialSkill,
+		"_ZN9CTFPlayer19DoClassSpecialSkillEv");
 	SYMBOL_FUNC(CTFPlayer_Event_Killed,
 		"_ZN9CTFPlayer12Event_KilledERK15CTakeDamageInfo");
 	SYMBOL_FUNC(CTFPlayer_Event_KilledOther,
@@ -451,8 +434,6 @@ void symbols_init(void)
 	
 	SYMBOL_FUNC(CTFBot_AddItem,
 		"_ZN6CTFBot7AddItemEPKc");
-	SYMBOL_FUNC(CTFBot_ChangeTeam,
-		"_ZN6CTFBot10ChangeTeamEibb");
 	SYMBOL_FUNC(CTFBot_EquipRequiredWeapon,
 		"_ZN6CTFBot19EquipRequiredWeaponEv");
 	SYMBOL_FUNC(CTFBot_IsAllowedToPickUpFlag,
@@ -601,6 +582,8 @@ void symbols_init(void)
 	
 	SYMBOL_FUNC(CBaseCombatWeapon_SetWeaponVisible,
 		"_ZN17CBaseCombatWeapon16SetWeaponVisibleEb");
+	SYMBOL_FUNC(CBaseCombatWeapon_GetOwner,
+		"_ZNK17CBaseCombatWeapon8GetOwnerEv");
 	
 	SYMBOL_FUNC(CTFWeaponBase_AreRandomCritsEnabled,
 		"_ZN13CTFWeaponBase21AreRandomCritsEnabledEv");
@@ -612,14 +595,14 @@ void symbols_init(void)
 		"_ZN13CTFWeaponBase33CalcIsAttackCriticalHelperNoCritsEv");
 	SYMBOL_FUNC(CTFWeaponBase_CanBeCritBoosted,
 		"_ZN13CTFWeaponBase16CanBeCritBoostedEv");
-	SYMBOL_FUNC(CTFWeaponBase_CanFireCriticalShot,
-		"_ZN13CTFWeaponBase19CanFireCriticalShotEb");
 	SYMBOL_FUNC(CTFWeaponBase_CanFireRandomCriticalShot,
 		"_ZN13CTFWeaponBase25CanFireRandomCriticalShotEf");
 	SYMBOL_FUNC(CTFWeaponBase_GetWeaponID,
 		"_ZNK13CTFWeaponBase11GetWeaponIDEv");
 	SYMBOL_FUNC(CTFWeaponBase_StartEffectBarRegen,
 		"_ZN13CTFWeaponBase19StartEffectBarRegenEv");
+	SYMBOL_FUNC(CTFWeaponBase_ItemBusyFrame,
+		"_ZN13CTFWeaponBase13ItemBusyFrameEv");
 	
 	SYMBOL_FUNC(CTFWeaponBaseGun_GetWeaponProjectileType,
 		"_ZNK16CTFWeaponBaseGun23GetWeaponProjectileTypeEv");
@@ -636,8 +619,6 @@ void symbols_init(void)
 	SYMBOL_FUNC(CTFRocketLauncher_Precache,
 		"_ZN17CTFRocketLauncher8PrecacheEv");
 	
-	SYMBOL_FUNC(CTFSniperRifle_CanFireCriticalShot,
-		"_ZN14CTFSniperRifle19CanFireCriticalShotEb");
 	SYMBOL_FUNC(CTFSniperRifle_DestroySniperDot,
 		"_ZN14CTFSniperRifle16DestroySniperDotEv");
 	SYMBOL_FUNC(CTFSniperRifle_ExplosiveHeadShot,
@@ -784,8 +765,6 @@ void symbols_init(void)
 	SYMBOL_FUNC(CTFGameRules_UsePlayerReadyStatusMode,
 		"_ZN12CTFGameRules24UsePlayerReadyStatusModeEv");
 	
-	SYMBOL_FUNC(CTeamplayRoundBasedRules_AreLobbyPlayersOnTeamReady,
-		"_ZN24CTeamplayRoundBasedRules26AreLobbyPlayersOnTeamReadyEi");
 	SYMBOL_FUNC(CTeamplayRoundBasedRules_CheckReadyRestart,
 		"_ZN24CTeamplayRoundBasedRules17CheckReadyRestartEv");
 	

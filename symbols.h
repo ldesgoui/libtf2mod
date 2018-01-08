@@ -149,9 +149,6 @@ extern bool (*WeaponID_IsSniperRifleOrBow)(int);
 
 extern unknown_t (*FX_FireBullets)(CTFWeaponBase*, int, Vector const*, QAngle const*, int, int, int, float, float, bool);
 
-extern void (*GlobalAttrModifier_MvMAttribHookMunger)(char const*, CUtlConstStringBase*);
-extern void (*GlobalAttrModifier_TFHalloweenAttribHookMunger)(char const*, CUtlConstStringBase*);
-
 extern CTFWearableDemoShield* (*GetEquippedDemoShield)(CTFPlayer*);
 
 extern void (*EconEntity_OnOwnerKillEaterEventNoPartner)(CEconEntity*, CTFPlayer*, int, int);
@@ -178,10 +175,8 @@ extern CEconItemView* (*CTFPlayerSharedUtils_GetEconItemViewByLoadoutSlot)(CTFPl
 
 extern unknown_t (*CTFDroppedWeapon_Create)(CTFPlayer*, Vector const*, QAngle const*, char const*, CEconItemView const*);
 
-extern CAttribute_String* (*CAttributeManager_AttribHookValue_CAttribute_String)(CAttribute_String*, CAttribute_String*, char const*, CBaseEntity const*, CUtlVector*, bool);
 extern float (*CAttributeManager_AttribHookValue_float)(float, char const*, CBaseEntity const*, CUtlVector*, bool);
 extern int (*CAttributeManager_AttribHookValue_int)(int, char const*, CBaseEntity const*, CUtlVector*, bool);
-extern void (*CAttributeManager_RegisterGlobalAttributeModifier)(bool (*)(void), void (*)(char const*, CUtlConstStringBase*));
 
 
 /* functions: member */
@@ -207,18 +202,15 @@ extern void (*CBaseEntity_ApplyAbsVelocityImpulse)(CBaseEntity* this, Vector con
 extern CBaseEntity* (*CBaseEntity_GetBaseEntity)(CBaseEntity* this);
 extern int (*CBaseEntity_GetMaxHealth)(CBaseEntity* this);
 extern int (*CBaseEntity_GetTeamNumber)(CBaseEntity* this);
-extern bool (*CBaseEntity_InSameTeam)(CBaseEntity* this, CBaseEntity*);
 extern bool (*CBaseEntity_IsAlive)(CBaseEntity* this);
 extern bool (*CBaseEntity_IsBaseObject)(CBaseEntity* this);
 extern bool (*CBaseEntity_IsPlayer)(CBaseEntity* this);
-extern unknown_t (*CBaseEntity_NetworkStateChanged)(CBaseEntity* this, void*);
 extern int (*CBaseEntity_TakeDamage)(CBaseEntity* this, CTakeDamageInfo const*);
 
 extern void (*CBaseAnimating_DrawServerHitboxes)(CBaseAnimating* this, float, bool);
 extern void (*CBaseAnimating_SetModelScale)(CBaseAnimating* this, float, float);
 
 extern void (*CBasePlayer_ChangeTeam)(CBasePlayer* this, int);
-extern void (*CBasePlayer_ChangeTeam_bool)(CBasePlayer* this, int, bool, bool);
 extern void (*CBasePlayer_CommitSuicide)(CBasePlayer* this, bool, bool);
 extern CBaseEntity* (*CBasePlayer_GiveNamedItem)(CBasePlayer* this, char const*, int);
 extern bool (*CBasePlayer_IsBot)(CBasePlayer* this);
@@ -227,16 +219,15 @@ extern bool (*CBaseMultiplayerPlayer_SpeakConceptIfAllowed)(CBaseMultiplayerPlay
 
 extern unknown_t (*CTFPlayer_AddBuildResources)(CTFPlayer* this, int);
 extern void (*CTFPlayer_ApplyAbsVelocityImpulse)(CTFPlayer* this, Vector const*);
-extern void (*CTFPlayer_ApplyAirBlastImpulse)(CTFPlayer* this, Vector const*);
 extern bool (*CTFPlayer_CanBeForcedToLaugh)(CTFPlayer* this);
 extern int (*CTFPlayer_CanBuild)(CTFPlayer* this, int, int);
 extern bool (*CTFPlayer_CanHearAndReadChatFrom)(CTFPlayer* this, CBasePlayer*);
 extern bool (*CTFPlayer_CanPickupBuilding)(CTFPlayer* this, CBaseObject*);
 extern void (*CTFPlayer_ChangeTeam)(CTFPlayer* this, int);
-extern void (*CTFPlayer_ChangeTeam_bool)(CTFPlayer* this, int, bool, bool);
 extern void (*CTFPlayer_CommitSuicide)(CTFPlayer* this, bool, bool);
 extern void (*CTFPlayer_CreateRagdollEntity)(CTFPlayer* this, bool, bool, bool, bool, bool, bool, bool, bool, int, bool);
 extern void (*CTFPlayer_DeathSound)(CTFPlayer* this, CTakeDamageInfo const*);
+extern bool (*CTFPlayer_DoClassSpecialSkill)(CTFPlayer* this);
 extern void (*CTFPlayer_Event_Killed)(CTFPlayer* this, CTakeDamageInfo const*);
 extern unknown_t (*CTFPlayer_Event_KilledOther)(CTFPlayer* this, CBaseEntity*, CTakeDamageInfo const*);
 extern unknown_t (*CTFPlayer_FireBullet)(CTFPlayer* this, CTFWeaponBase*, FireBulletsInfo_t const*, bool, int, int);
@@ -343,16 +334,17 @@ extern unknown_t (*CItemGeneration_GenerateRandomItem)(CItemGeneration* this, CI
 extern unknown_t (*CItemGeneration_SpawnItem)(CItemGeneration* this, int, Vector const*, QAngle const*, int, int, char const*);
 
 extern void (*CBaseCombatWeapon_SetWeaponVisible)(CBaseCombatWeapon* this, bool);
+extern CBasePlayer *(*CBaseCombatWeapon_GetOwner)(CBaseCombatWeapon* this);
 
 extern bool (*CTFWeaponBase_AreRandomCritsEnabled)(CTFWeaponBase* this);
 extern bool (*CTFWeaponBase_CalcIsAttackCritical)(CTFWeaponBase* this);
 extern bool (*CTFWeaponBase_CalcIsAttackCriticalHelper)(CTFWeaponBase* this);
 extern bool (*CTFWeaponBase_CalcIsAttackCriticalHelperNoCrits)(CTFWeaponBase* this);
 extern bool (*CTFWeaponBase_CanBeCritBoosted)(CTFWeaponBase* this);
-extern bool (*CTFWeaponBase_CanFireCriticalShot)(CTFWeaponBase* this, bool);
 extern bool (*CTFWeaponBase_CanFireRandomCriticalShot)(CTFWeaponBase* this, float);
 extern int (*CTFWeaponBase_GetWeaponID)(CTFWeaponBase* this);
 extern void (*CTFWeaponBase_StartEffectBarRegen)(CTFWeaponBase* this);
+extern void (*CTFWeaponBase_ItemBusyFrame)(CTFWeaponBase* this);
 
 extern int (*CTFWeaponBaseGun_GetWeaponProjectileType)(CTFWeaponBaseGun* this);
 extern void (*CTFWeaponBaseGun_PrimaryAttack)(CTFWeaponBaseGun* this);
@@ -363,7 +355,6 @@ extern bool (*CWeaponMedigun_IsAttachedToBuilding)(CWeaponMedigun* this);
 
 extern void (*CTFRocketLauncher_Precache)(CTFRocketLauncher* this);
 
-extern bool (*CTFSniperRifle_CanFireCriticalShot)(CTFSniperRifle* this, bool);
 extern void (*CTFSniperRifle_DestroySniperDot)(CTFSniperRifle* this);
 extern void (*CTFSniperRifle_ExplosiveHeadShot)(CTFSniperRifle* this, CTFPlayer*, CTFPlayer*);
 extern void (*CTFSniperRifle_ItemPostFrame)(CTFSniperRifle* this);
@@ -445,7 +436,6 @@ extern void (*CTFGameRules_PlayerReadyStatus_UpdatePlayerState)(CTFGameRules* th
 extern void (*CTFGameRules_PushAllPlayersAway)(CTFGameRules* this, Vector const*, float, float, int, CUtlVector*);
 extern bool (*CTFGameRules_UsePlayerReadyStatusMode)(CTFGameRules* this);
 
-extern bool (*CTeamplayRoundBasedRules_AreLobbyPlayersOnTeamReady)(CTeamplayRoundBasedRules* this, int);
 extern void (*CTeamplayRoundBasedRules_CheckReadyRestart)(CTeamplayRoundBasedRules* this);
 
 extern void (*CTFGameRulesProxy_Activate)(CTFGameRulesProxy* this);
